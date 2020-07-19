@@ -1,24 +1,48 @@
-# README
+# studio_modelers のDB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
+### Association
+- has_many :posts
+- has_many :comments
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string||null: false|
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :comments
+- has_many :contents
 
-Things you may want to cover:
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :user
 
-* Ruby version
+## contentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|sub_title|string||
+|text|text|null: false|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- has_many :photos
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## photosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|photo|string|null: false|
+|content_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :content
