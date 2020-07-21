@@ -1,2 +1,7 @@
+* {
+  box-sizing: border-box;
+}
 @import "reset";
 @import "modules/home";
+@import "font-awesome-sprockets";
+@import "font-awesome";
