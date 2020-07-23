@@ -1,7 +1,106 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  %a.navbar-brand{:href => "#"} Navbar
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %a.nav-link{:href => "#"}
+          Home
+          %span.sr-only (current)
+      %li.nav-item
+        %a.nav-link{:href => "#"} Category
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          User
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          = link_to( 'Mypage', users_show_path, {class: "dropdown-item"} )
+          = link_to( 'Edit', edit_user_registration_path, {class: "dropdown-item"} )
+          = link_to('Logout', destroy_user_session_path, {class: "dropdown-item"})
+          = link_to('Login', new_user_session_path, {class: "dropdown-item"})
+          = link_to('Signup', new_user_registration_path, {class: "dropdown-item"})
+          .dropdown-divider
+          %a.dropdown-item{:href => "#"} Something else here
+      %li.nav-item
+        %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
+    %form.form-inline.my-2.my-lg-0
+      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
 
-= link_to('サインアップ', new_user_registration_path {})
-= link_to('編集', edit_user_registration_path {})
-= link_to('マイページ', users_show_path {})
-= link_to('ログアウト', destroy_user_session_path {})
+%p
+  = image_tag 'bigimage2.jpeg', alt: '', class: 'img-fluid'
+.container.container-m
+  .card-deck
+    .card
+      = image_tag 'home_image.jpg', alt: '', class: 'card-img-top'
+      .card-body
+        %h5.card-title Card title
+        %p.card-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+        %p.card-text
+          %small.text-muted Last updated 3 mins ago
+    .card
+      = image_tag '01_s.jpg', alt: '', class: 'card-img-top'
+      .card-body
+        %h5.card-title Card title
+        %p.card-text This card has supporting text below as a natural lead-in to additional content.
+        %p.card-text
+          %small.text-muted Last updated 3 mins ago
+    .card
+      = image_tag 'test_image.jpg', alt: '', class: 'card-img-top'
+      -# %img.card-img-top{:alt => "Card image cap", :src => ".../100px200/"}/
+      .card-body
+        %h5.card-title Card title
+        %p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+        %p.card-text
+          %small.text-muted Last updated 3 mins ago
+
+.container.container-m
+  .row
+    .col-md-6
+      = image_tag 'test.jpg', alt: '', class: 'img-fluid'
+    .col-md-6
+      %h1 sampletext
+      %p samplet extsampletextsam pletextsampletextsamplete xtsampl etextsa mpletextsampletexts amplet extsamp lete xtsam p letext sampl ete xtsamp letextsample text sam plet ext sa mp l etext sa mp let exts amplete xtsample textsa mplet extsam ple text
+
+.container.container-m
+  .row
+    .col-md-4.img-box
+      = image_tag 'colum1.jpg', alt: '', height: '300px', width: '100%', class: 'rounded'
+      .card-img-overlay
+        %h5.card-title-c
+          Card title
+        %p.card-text-c
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer
+    .col-md-4.img-box
+      = image_tag 'colum2.jpg', alt: '', height: '300px', width: '100%', class: 'rounded'
+      .card-img-overlay
+        %h5.card-title-c
+          Card title
+        %p.card-text-c
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer
+    .col-md-4.img-box
+      = image_tag 'colum3.jpg', alt: '', height: '300px', width: '100%', class: 'rounded'
+      .card-img-overlay
+        %h5.card-title-c
+          Card title
+        %p.card-text-c
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer
+
+/ Footer
+%footer.footer
+  / Footer Elements
+  .container
+    / Call to action
+    %ul.list-unstyled.list-inline.text-center.py-2
+      %li.list-inline-item
+        %h5.mb-1 Register for free
+      %li.list-inline-item
+        %a.btn.btn-outline-light{:href => "#!"} Sign up!
+    / Call to action
+  / Footer Elements
+  / Copyright
+  .footer-copyright.text-center.py-3
+    Wellcome to
+    %a{:href => "#"} - Studio +modelers -
+  / Copyright
+/ Footer

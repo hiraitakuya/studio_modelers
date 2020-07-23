@@ -1,3 +1,31 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container-m {
+  margin-top: 80px;
+}
+
+.footer{
+  margin-top: 60px;
+  padding-top: 10px;
+  background-color: #343B40;
+  color: #fff;
+}
+
+.card-title-c{
+  color: #fff;
+  padding: 10px;
+  text-shadow: #000 5px 5px 10px;
+}
+
+.card-text-c{
+  color: #fff;
+  padding: 10px;
+  font-weight: 300;
+  text-shadow: #000 5px 5px 10px;
+}
+// .card-columns {
+//   @include media-breakpoint-only(lg) {
+//     column-count: 4;
+//   }
+//   @include media-breakpoint-only(xl) {
+//     column-count: 5;
+//   }
+// }

@@ -1,7 +1,13 @@
 * {
   box-sizing: border-box;
 }
+a{
+  color: lightblue;
+  text-decoration: none;
+}
+
 @import "reset";
 @import "modules/home";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "style";
