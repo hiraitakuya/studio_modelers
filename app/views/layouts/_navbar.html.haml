@@ -1,0 +1,29 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  %a.navbar-brand{:href => "/"} Navbar
+  %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %a.nav-link{:href => "#"}
+          Home
+          %span.sr-only (current)
+      - if user_signed_in?
+        %li.nav-item.active
+          = link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link")
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            User
+          .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            = link_to( 'Mypage', users_show_path, {class: "dropdown-item"} )
+            = link_to( 'Edit', edit_user_registration_path, {class: "dropdown-item"} )
+      - else
+        %li.nav-item.active
+          %a.nav-link{"data-target" => "#signUpModal", "data-toggle" => "modal", :type => "button"} Sign Up
+        %li.nav-item
+          %a.nav-link{"data-target" => "#logInModal", "data-toggle" => "modal", :type => "button"} Log In
+      %li.nav-item
+        %a.nav-link{:href => "#"} Category
+    %form.form-inline.my-2.my-lg-0
+      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
