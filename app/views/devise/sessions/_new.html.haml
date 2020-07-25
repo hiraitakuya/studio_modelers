@@ -1,0 +1,26 @@
+#logInModal.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header.pt-2.pb-1.bg-primary.text-white
+        .modal-title.mx-auto
+          %h5 Log In
+        %button.close{"data-dismiss" => "modal", :type => "button"}
+          %span.text-white ×
+      .modal-body.mx-auto
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .form-group.row
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", size: "30", class: "form-control"
+          %br/
+          .form-group.row
+            = f.label :password
+            - if @minimum_password_length
+              %em
+                (#{@minimum_password_length} characters minimum)
+            %br/
+            = f.password_field :password, autocomplete: "off", size: "30", class: "form-control"
+          %br/
+          = f.submit "Log in", class: 'btn btn-outline-primary row'
+
