@@ -1,7 +1,60 @@
-%h1 about me
-%h3 ユーザー名
-= @user.name
-%h3 メールアドレス
-= @user.email
-%h3 プロフィール
-= @user.profile
+.bg-light.pt-5
+  .container.pt-5
+    .row
+      .col-md-6
+        -# -if current_user.avater.present?
+        = image_tag 'user_icon.jpg', alt: '',width: "160", height: "160", class: 'rounded-circle mx-auto d-block'
+        -# - else
+        -#   = image_tag 'user_icon.jpg', alt: '',width: "160", height: "160", class: 'rounded-circle mx-auto d-block'
+
+      .col-md-6
+        %h5.font-italic 
+          Name
+        %p.mb-5.ml-1
+          = @user.name
+        %h5.font-italic
+          Email
+        %p.mb-5.ml-1
+          = @user.email
+        %h5.font-italic
+          Profile
+        %p.mb-5.ml-1
+          = @user.profile
+
+.container
+  .row
+    .col-md-4.mt-4.img-box
+      = image_tag 'colum1.jpg', alt: '', height: '300px', width: '100%', class: 'rounded'
+      .card-img-overlay
+        %h5.card-title-c
+          Card title
+        %p.card-text-c
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer
+    .col-md-4.mt-4.img-box
+      = image_tag 'colum2.jpg', alt: '', height: '300px', width: '100%', class: 'rounded'
+      .card-img-overlay
+        %h5.card-title-c
+          Card title
+        %p.card-text-c
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer
+    .col-md-4.mt-4.img-box
+      = image_tag 'colum3.jpg', alt: '', height: '300px', width: '100%', class: 'rounded'
+      .card-img-overlay
+        %h5.card-title-c
+          Card title
+        %p.card-text-c
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer
+    .col-md-4.mt-4.img-box
+      = image_tag 'colum2.jpg', alt: '', height: '300px', width: '100%', class: 'rounded'
+      .card-img-overlay
+        %h5.card-title-c
+          Card title
+        %p.card-text-c
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer
+    .col-md-4.mt-4.img-box
+      = image_tag 'colum3.jpg', alt: '', height: '300px', width: '100%', class: 'rounded'
+      .card-img-overlay
+        %h5.card-title-c
+          Card title
+        %p.card-text-c
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer
