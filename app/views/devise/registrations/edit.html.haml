@@ -8,10 +8,22 @@
     = render "devise/shared/error_messages", resource: resource
     .row
       .col-md-6
-        = image_tag 'user_icon.jpg', alt: '',width: "160", height: "160", class: 'rounded-circle mx-auto d-block'
-        %p.text-center.font-weight-light.mt-3 Please change the avater image
+        #circle-avatar.circle-avatar
+          
+          = image_tag 'photo.jpg', height: '160', width: '160', class: 'hidden rounded-circle mx-auto d-block', id: 'avatar_img_prev'
+          - if current_user.persisted? && current_user.avatar?
+            = image_tag current_user.avatar.to_s, alt: '',width: "160", height: "160", class: 'avatar_present_img rounded-circle mx-auto d-block'
+            %label
+              = f.check_box :remove_avatar
+              画像を削除
+          - else
+            = image_tag 'photo.jpg', width: "160", height: "160", class: 'avatar_present_img rounded-circle mx-auto d-block'
+            = f.hidden_field :avatar_cache
+          = f.file_field :avatar, id: 'post_img'
+
+
+        %p.text-center.font-weight-light.mt-3 Please change the avatar image
       %ul.col-md-6
-        / アカウント編集時に名前を入力できるようにフォームを追加
         %li.form-group.field
           = f.label :name, class: "font-italic "
           %br/
@@ -20,10 +32,26 @@
           = f.label :email, class: "font-italic "
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
-        / アカウント編集時にプロフィールを入力できるようにフォームを追加
         %li.form-group.field
           = f.label :profile, class: "font-italic "
           %br/
           = f.text_area :profile, autofocus: true, class: "form-control"
         %li.actions.mt-4
           = f.submit "Update", class: "btn btn-primary"
+
+-# .circle-avatar
+-#   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+-#     %img#avatar_img_prev.hidden{:src => "#"}/
+-#     / 1行追加
+-#     - if current_user.persisted? && current_user.avatar?
+-#       = image_tag current_user.avatar.to_s, width: "160", height: "160", class: 'avatar_present_img'
+-#       / classを追加
+-#       %label
+-#         = f.check_box :remove_avatar
+-#         画像を削除
+-#     - else
+-#       = image_tag 'photo.jpg', class: 'avatar_present_img'
+-#       / classを追加
+-#       = f.hidden_field :avatar_cache
+-#     = f.file_field :avatar, id: 'post_img'
+-#     / idを追加
