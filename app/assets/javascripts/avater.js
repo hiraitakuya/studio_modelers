@@ -11,7 +11,7 @@ $( document ).on('turbolinks:load', function() {
   }
 
   $("#post_img").change(function(){
-    $('#avatar_img_prev').removeClass('hidden');
+    $('#avatar_img_prev').removeClass('d-none');
     $('.avatar_present_img').remove();
     readURL(this);
   });
