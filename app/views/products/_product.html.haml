@@ -1,0 +1,8 @@
+.col-md-4.mt-4.img-box
+  = link_to product_path(product.id) do
+    = image_tag product.photos.first.image_url.url, alt: '', height: '300px', width: '100%', class: 'rounded'
+    .card-img-overlay
+      %h5.card-title-c
+        = product.title
+      %p.card-text-c
+        = product.text
