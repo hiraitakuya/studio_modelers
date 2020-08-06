@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 200 }
 
   mount_uploader :avatar, AvatarUploader
+  has_many :products
 end
