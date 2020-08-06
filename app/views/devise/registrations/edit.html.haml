@@ -10,7 +10,7 @@
       .col-md-6
         #circle-avatar.circle-avatar
           
-          = image_tag 'photo.jpg', height: '160', width: '160', class: 'hidden rounded-circle mx-auto d-block', id: 'avatar_img_prev'
+          = image_tag 'photo.jpg', height: '160', width: '160', class: 'hidden rounded-circle mx-auto d-none', id: 'avatar_img_prev'
           - if current_user.persisted? && current_user.avatar?
             = image_tag current_user.avatar.to_s, alt: '',width: "160", height: "160", class: 'avatar_present_img rounded-circle mx-auto d-block'
             %label
