@@ -8,7 +8,6 @@
 |avatar|string||
 ### Association
 - has_many :products
-- has_many :comments
 
 ## productsテーブル
 |Column|Type|Options|
@@ -18,7 +17,6 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :comments
 - has_many :photos
 
 ## photosテーブル
