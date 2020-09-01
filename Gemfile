@@ -68,3 +68,4 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.5.0'
 gem 'carrierwave'
 gem 'rmagick' #画像処理に必要
+gem 'fog-aws'
