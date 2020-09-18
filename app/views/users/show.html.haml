@@ -22,6 +22,6 @@
           = @user.profile
 
 .container
-  .row  
+  .row
     - @products.each do |product|
       = render 'products/product', product: product
