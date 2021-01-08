@@ -1,0 +1,13 @@
+
+#userProductModal.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .container
+        .row
+          .col-md-6
+            = image_tag 'test.jpg', alt: '', class: 'img-fluid'
+          .col-md-6
+            %h2.mb-4
+              = @product.title
+            %p 
+              = @product.text
